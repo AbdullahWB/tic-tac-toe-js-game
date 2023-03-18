@@ -35,6 +35,13 @@ nav ul {
     grid-template-columns: repeat(3, 10vw);
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
+    border: 10px solid pink;
+    padding: 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .box {
@@ -52,10 +59,21 @@ nav ul {
 .gameInfo {
     padding: 0 34px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .imgBox img {
-    display: none;
+    /*display: none;*/
+    width: 0;
+    transition: width 1s ease-in-out;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -ms-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    margin-top: 30px;
 }
 
 .br-0 {
@@ -72,4 +90,35 @@ nav ul {
 
 .bb-0 {
     border-bottom: 0;
+}
+
+#reset {
+    padding: 10px 24px;
+    color: white;
+    background-color: palevioletred;
+    border: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: rgba(251, 184, 195, 0.797);
+    color: palevioletred;
+}
+
+.info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    /* margin-bottom: 30px; */
+    /* text-align: center; */
+}
+
+h1 {
+    margin-bottom: 20px;
 }
