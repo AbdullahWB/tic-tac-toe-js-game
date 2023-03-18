@@ -35,13 +35,14 @@ nav ul {
     grid-template-columns: repeat(3, 10vw);
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    border: 10px solid pink;
+    /* border: 10px solid pink; */
     padding: 40px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    position: relative;
 }
 
 .box {
@@ -121,6 +122,25 @@ nav ul {
 
 h1 {
     margin-bottom: 20px;
+}
+
+.line {
+    background-color: pink;
+    height: 7px;
+    width: 0vw;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: width 1s ease-in-out;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -ms-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
 }
 
 @media screen and (max-width: 800px) {

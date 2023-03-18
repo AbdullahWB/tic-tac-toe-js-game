@@ -10,32 +10,32 @@ const changeTurn = () => {
 }
 
 // function to check 
+
+// ===========
 const checkWin = () => {
-    let boxTexts = document.getElementsByClassName('boxText')
+    let boxText = document.getElementsByClassName('boxText');
     let wins = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
+        [0, 1, 2, 3, 7, 0],
+        [3, 4, 5, 3, 17, 0],
+        [6, 7, 8, 3, 27, 0],
+        [0, 3, 6, -5, 17, 90],
+        [1, 4, 7, 3, 17, 90],
+        [2, 5, 8, 13, 17, 90],
+        [0, 4, 8, 3, 17, 45],
+        [2, 4, 6, 3, 17, -45],
     ]
-    let winner = ''
     wins.forEach(e => {
-        if ((boxTexts[e[0]].innerText === boxTexts[e[1]].innerText) && (boxTexts[e[2]].innerText === boxTexts[e[1]].innerText) && (boxTexts[e[0]].innerText !== '')) {
-            winner = boxTexts[e[0]].innerText
+        if ((boxText[e[0]].innerText === boxText[e[1]].innerText) && (boxText[e[2]].innerText === boxText[e[1]].innerText) && (boxText[e[0]].innerText !== "")) {
+            document.querySelector('.info').innerText = boxText[e[0]].innerText + " Won"
+            isGameOver = true
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "200px";
+            document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
+            document.querySelector(".line").style.width = "28vw";
+            // document.querySelector(".line").style.transform = `translate(${e[3]}%, ${e[4]}%) rotate(${e[5]}deg)`
+            // document.querySelector(".line").style.width = "50vw";
         }
     })
-    if (winner !== '') {
-        document.querySelector('.info').innerText = winner + ' won'
-        isGameOver = true
-        document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "150px"
-    } else {
-        document.querySelector('.info').innerText = 'Turn for ' + turn
-    }
 }
-
 
 // main logic
 let boxes = document.getElementsByClassName('box')
@@ -63,6 +63,7 @@ document.getElementById('reset').addEventListener('click', () => {
     });
     turn = 'X'
     isGameOver = false
+    document.querySelector(".line").style.width = "0vw";
     document.querySelector('.info').innerText = 'Turn for ' + turn;
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0px"
 })
