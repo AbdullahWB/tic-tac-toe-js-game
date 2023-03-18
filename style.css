@@ -35,7 +35,7 @@ nav ul {
     grid-template-columns: repeat(3, 10vw);
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    /* border: 10px solid pink; */
+    border: 10px solid pink;
     padding: 40px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -46,7 +46,7 @@ nav ul {
 }
 
 .box {
-    border: 1px solid black;
+    border: 1px solid pink;
     font-size: 8vw;
     display: flex;
     justify-content: center;
